@@ -46,8 +46,8 @@ class AnyRecursiveScheduler<State> {
             }
             
             let action = self._lock.calculateLocked { () -> Action? in
-                if isAdded {
-                    self._group.removeDisposable(removeKey!)
+                if let rmKey = removeKey where isAdded == true {
+                    self._group.removeDisposable(rmKey)
                 }
                 else {
                     isDone = true
@@ -89,8 +89,8 @@ class AnyRecursiveScheduler<State> {
             }
             
             let action = self._lock.calculateLocked { () -> Action? in
-                if isAdded {
-                    self._group.removeDisposable(removeKey!)
+                if let rmKey = removeKey where isAdded == true {
+                    self._group.removeDisposable(rmKey)
                 }
                 else {
                     isDone = true
@@ -159,8 +159,8 @@ class RecursiveImmediateScheduler<State> {
             }
             
             let action = self._lock.calculateLocked { () -> Action? in
-                if isAdded {
-                    self._group.removeDisposable(removeKey!)
+                if let rmKey = removeKey where isAdded == true {
+                    self._group.removeDisposable(rmKey)
                 }
                 else {
                     isDone = true
