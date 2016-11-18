@@ -49,8 +49,6 @@ class AnyRecursiveScheduler<State> {
                 if isAdded == true {
                     if let rmKey = removeKey{
                         self._group.removeDisposable(rmKey)
-                    }else{
-                        isDone = true
                     }
                     
                 }
@@ -97,8 +95,6 @@ class AnyRecursiveScheduler<State> {
                 if isAdded == true {
                     if let rmKey = removeKey{
                         self._group.removeDisposable(rmKey)
-                    }else{
-                        isDone = true
                     }
                     
                 }
@@ -172,8 +168,6 @@ class RecursiveImmediateScheduler<State> {
                 if isAdded == true {
                     if let rmKey = removeKey{
                         self._group.removeDisposable(rmKey)
-                    }else{
-                        isDone = true
                     }
                     
                 }
